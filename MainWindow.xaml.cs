@@ -1,5 +1,6 @@
 ﻿using FreeWPF.data.api;
 using FreeWPF.data.api.model;
+using FreeWPF.WIndow;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,7 +54,13 @@ namespace FreeWPF
             });
             if (response.Access_token != "")
             {
-                MessageBox.Show("Well!");
+                Hide();
+                var UserRespose = api.getUser();
+                new ProfileUserWindow().ShowDialog();
+                Show();
+                tbName.Text = "";
+                tbSurName.Text = "";
+                pbPassword.Password = "";
             }
             else
                 MessageBox.Show("Error");
