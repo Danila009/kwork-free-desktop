@@ -27,5 +27,24 @@ namespace FreeWPF.data.api
 
             return result;
         }
+
+        public void reag(RegistrationBody body)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/api/Registration");
+
+            request.Content = JsonContent.Create(body);
+
+            var response = httpClient.SendAsync(request).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                auth(new AuthBody
+                {
+                    FirstName = body.FirstName,
+                    LastName = body.LastName,
+                    Password = body.Password
+                });
+            }
+        }
     }
 }
