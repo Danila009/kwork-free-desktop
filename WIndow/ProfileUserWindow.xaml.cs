@@ -25,11 +25,7 @@ namespace FreeWPF.WIndow
         public ProfileUserWindow()
         {
             InitializeComponent();
-            var api = new NetworkApi();
-
-            User = api.getUser();
-            
-            DataContext = User;
+            update();
             //tbName.Text = User.FirstName;
         }
 
@@ -48,7 +44,16 @@ namespace FreeWPF.WIndow
 
         private void addHours(object sender, RoutedEventArgs e)
         {
+            new AddHoursWindow().ShowDialog() ;
+            update();
+        }
 
+        void update()
+        {
+            var api = new NetworkApi();
+            User = api.getUser();
+
+            DataContext = User;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FreeWPF.data.api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,32 @@ namespace FreeWPF.WIndow
         public AddHoursWindow()
         {
             InitializeComponent();
+        }
+
+        private void addHour(object sender, RoutedEventArgs e)
+        {
+            var api = new NetworkApi();
+            
+            if (tbHours.Text != "")
+            {
+                int hour = Convert.ToInt32(tbHours.Text);
+                api.updateBalance(hour);
+
+            }
+            Close();
+        }
+
+        private void mouseDowns(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void closeWindow(object sender, MouseButtonEventArgs e)
+        {
+            Close();
         }
     }
 }
