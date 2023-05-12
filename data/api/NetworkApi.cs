@@ -28,7 +28,7 @@ namespace FreeWPF.data.api
             return result;
         }
 
-        public void reag(RegistrationBody body)
+        public AuthResponse? reag(RegistrationBody body)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, "http://localhost:5000/api/Registration");
 
@@ -38,13 +38,31 @@ namespace FreeWPF.data.api
 
             if (response.IsSuccessStatusCode)
             {
-                auth(new AuthBody
+                return auth(new AuthBody
                 {
                     FirstName = body.FirstName,
                     LastName = body.LastName,
                     Password = body.Password
                 });
             }
+
+            return null;
+        }
+
+        public User getUser()
+        {
+            var localstorage = new LocalStorage();
+            var token = localstorage.Get("token");
+
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5000/api/User");
+
+            request.Headers.TryAddWithoutValidation("Authorization", $"Bearer {token}");
+
+            var response = httpClient.SendAsync(request).Result;
+
+            var json = response.Content.ReadAsStringAsync().Result;
+            
+            return JsonConvert.DeserializeObject<User>(json);
         }
     }
 }
