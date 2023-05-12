@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FreeWPF.data.api;
+using FreeWPF.data.api.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,14 +35,28 @@ namespace FreeWPF
             }
         }
 
-        private void closeWindow(object sender, RoutedEventArgs e)
+        
+        private void closeWindow(object sender, MouseButtonEventArgs e)
         {
             Close();
         }
 
-        private void closeWindow(object sender, MouseButtonEventArgs e)
+        private void EnterUser(object sender, RoutedEventArgs e)
         {
+            var api = new NetworkApi();
 
+            var response = api.auth(new AuthBody
+            {
+                FirstName = tbName.Text,
+                LastName = tbSurName.Text,
+                Password = pbPassword.Password
+            });
+            if (response.Access_token != "")
+            {
+                MessageBox.Show("Well!");
+            }
+            else
+                MessageBox.Show("Error");
         }
     }
 }
