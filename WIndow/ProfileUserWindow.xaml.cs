@@ -28,7 +28,9 @@ namespace FreeWPF.WIndow
             var api = new NetworkApi();
 
             User = api.getUser();
+            
             DataContext = User;
+            //tbName.Text = User.FirstName;
         }
 
         private void closeWindow(object sender, MouseButtonEventArgs e)
@@ -42,6 +44,11 @@ namespace FreeWPF.WIndow
             {
                 this.DragMove();
             }
+        }
+
+        private void addHours(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -53,7 +53,7 @@ namespace FreeWPF.data.api
         public User getUser()
         {
             var localstorage = new LocalStorage();
-            var token = localstorage.Get("token");
+            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZGFuIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQmFzZVVzZXIiLCJJZCI6IjEiLCJuYmYiOjE2ODM5MjI0MzMsImV4cCI6MTY4NTEzMjAzMywiaXNzIjoiRGlwbG9tQXBpIiwiYXVkIjoiRGlwbG9tQ2xpZW50In0.yguGqoub4dkMkUHStMkf3lgcgJ2T0g8BHyK62aZnyGE";
 
             var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5000/api/User");
 

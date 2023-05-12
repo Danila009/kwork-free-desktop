@@ -51,19 +51,24 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Margin="10">
                     <StackPanel>
+                        <TextBlock Text="Фамилия" Style="{StaticResource MaterialDesignCaptionTextBlock}"/>
+                        <TextBlock x:Name="tbName" Text="{Binding FirstName}" Margin="0 0 0 15" 
+                                   materialDesign:HintAssist.Hint="Фамилия"/>
+                        
+                        <TextBlock Text="Имя" Style="{StaticResource MaterialDesignCaptionTextBlock}"/>
+                        <TextBlock Text="{Binding LastName}" Margin="0 0 0 15" />
 
-                        <TextBlock Text="{Binding FirstName}" Margin="0 15"/>
-                        <TextBlock Text="SurName" />
-                        <TextBlock Text="DobleName" Margin="0 15"/>
-                        <TextBlock Text="role" />
+                        <TextBlock Text="Специальность" Style="{StaticResource MaterialDesignCaptionTextBlock}"/>
+                        <TextBlock Text="{Binding Specialization.Title}" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Column="1" Margin="10">
                     <StackPanel>
 
-                        <TextBlock Text="время работы" Margin="0 15"/>
-                        <TextBlock Text="зп"/>
-                        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}" Margin="0 15" materialDesign:ButtonAssist.CornerRadius="15" Content="Добавить часы" Foreground="#FFFFFF"/>
+                        <TextBlock Text="Баланс" Style="{StaticResource MaterialDesignCaptionTextBlock}"/>
+                        <TextBlock Text="{Binding Balance}"/>
+                        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}" Margin="0 15" Click="addHours"
+                                materialDesign:ButtonAssist.CornerRadius="15" Content="Добавить часы" Foreground="#FFFFFF"/>
                     </StackPanel>
                 </Grid>
             </Grid>

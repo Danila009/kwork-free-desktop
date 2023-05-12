@@ -65,5 +65,10 @@ namespace FreeWPF
             else
                 MessageBox.Show("Error");
         }
+
+        private void SungUpUser(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -55,10 +55,17 @@
 
                     <PasswordBox x:Name="pbPassword" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}" Margin="0 15" materialDesign:HintAssist.Hint="Пароль"
                      materialDesign:HintAssist.HintOpacity="1" />
-
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        
                     <Button x:Name="btEnter" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Margin="0 15 0 0" 
                         materialDesign:ButtonAssist.CornerRadius="15" Content="Вход" Foreground="White" 
-                            Click="EnterUser" />
+                            Click="EnterUser" Width="100" />
+                        
+                        <Button x:Name="btSingUp" Style="{StaticResource MaterialDesignFlatAccentButton}" Margin="0 15 0 0" 
+                        materialDesign:ButtonAssist.CornerRadius="15" Content="Регистрация" Foreground="#FF6D00" 
+                            Click="SungUpUser" />
+
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Border>
