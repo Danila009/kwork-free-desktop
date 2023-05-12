@@ -1,6 +1,7 @@
 ﻿using FreeWPF.data.api.model;
 using Hanssens.Net;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 
@@ -63,6 +64,17 @@ namespace FreeWPF.data.api
             var json = response.Content.ReadAsStringAsync().Result;
             
             return JsonConvert.DeserializeObject<User>(json);
+        }
+
+        public List<Specialization> getSpecializations()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://localhost:5000/api/Specialization");
+
+            var response = httpClient.SendAsync(request).Result;
+
+            var json = response.Content.ReadAsStringAsync().Result;
+
+            return JsonConvert.DeserializeObject<List<Specialization>>(json);
         }
     }
 }
