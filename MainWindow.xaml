@@ -47,17 +47,18 @@
                     <TextBlock Text="Вход" HorizontalAlignment="Center" Foreground="Black" FontSize="30"/>
 
 
-                    <TextBox Style="{StaticResource  MaterialDesignFloatingHintTextBox}" Margin="0 15" materialDesign:HintAssist.Hint="Фамилия"
+                    <TextBox x:Name="tbSurName" Style="{StaticResource  MaterialDesignFloatingHintTextBox}" Margin="0 15" materialDesign:HintAssist.Hint="Фамилия"
                      materialDesign:HintAssist.HintOpacity="1" />
 
-                    <TextBox Style="{StaticResource  MaterialDesignFloatingHintTextBox}"  materialDesign:HintAssist.Hint="Имя"
+                    <TextBox x:Name="tbName" Style="{StaticResource  MaterialDesignFloatingHintTextBox}"  materialDesign:HintAssist.Hint="Имя"
                      materialDesign:HintAssist.HintOpacity="1" />
 
-                    <PasswordBox Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}" Margin="0 15" materialDesign:HintAssist.Hint="Пароль"
+                    <PasswordBox x:Name="pbPassword" Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}" Margin="0 15" materialDesign:HintAssist.Hint="Пароль"
                      materialDesign:HintAssist.HintOpacity="1" />
 
                     <Button x:Name="btEnter" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Margin="0 15 0 0" 
-                        materialDesign:ButtonAssist.CornerRadius="15" Content="Вход" Foreground="White" />
+                        materialDesign:ButtonAssist.CornerRadius="15" Content="Вход" Foreground="White" 
+                            Click="EnterUser" />
                 </StackPanel>
             </Grid>
         </Border>

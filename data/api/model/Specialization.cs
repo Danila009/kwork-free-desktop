@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FreeWPF.data.api.model
 {
-    internal class Specialization
+    public class Specialization
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;

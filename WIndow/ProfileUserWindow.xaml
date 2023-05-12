@@ -1,0 +1,73 @@
+﻿<Window x:Class="FreeWPF.WIndow.ProfileUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreeWPF.WIndow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ProfileUserWindow" Height="450" Width="800"
+        WindowStyle="None" Background="Transparent" FontSize="18" 
+        
+        
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Orange" SecondaryColor="Orange"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="180*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" CornerRadius=" 10 10 0 0" MouseDown="mouseMove">
+            <Grid>
+                <materialDesign:PackIcon Kind="Close" Width="20" Foreground="#FFFFFF" Height="20" Margin="0 10 10 0" 
+                                         HorizontalAlignment="Right" VerticalAlignment="Top" MouseDown="closeWindow"/>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+
+                <Image Source="/Resources/Logo.png"   Width="100"/>
+                
+                
+            </StackPanel>
+            </Grid>
+            <Border.Background>
+                <ImageBrush ImageSource="/Resources/019rIxRV8HE.jpg" Stretch="UniformToFill"/>
+            </Border.Background>
+            
+
+        </Border>
+
+        <Border Grid.Row="1" Background="#BFBFB8" CornerRadius="0 0 10 10" BorderThickness="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Margin="10">
+                    <StackPanel>
+
+                        <TextBlock Text="{Binding FirstName}" Margin="0 15"/>
+                        <TextBlock Text="SurName" />
+                        <TextBlock Text="DobleName" Margin="0 15"/>
+                        <TextBlock Text="role" />
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1" Margin="10">
+                    <StackPanel>
+
+                        <TextBlock Text="время работы" Margin="0 15"/>
+                        <TextBlock Text="зп"/>
+                        <Button Style="{StaticResource MaterialDesignFlatAccentBgButton}" Margin="0 15" materialDesign:ButtonAssist.CornerRadius="15" Content="Добавить часы" Foreground="#FFFFFF"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
