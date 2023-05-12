@@ -43,6 +43,9 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Text="{Binding N}"
+                </Grid>
             </Grid>
         </Border>
 
