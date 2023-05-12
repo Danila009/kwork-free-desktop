@@ -24,5 +24,23 @@ namespace FreeWPF
         {
             InitializeComponent();
         }
+
+        private void BorderMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void closeWindow(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void closeWindow(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
