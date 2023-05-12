@@ -37,5 +37,10 @@ namespace FreeWPF
         {
             Close();
         }
+
+        private void closeWindow(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
