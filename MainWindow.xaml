@@ -4,9 +4,59 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FreeWPF"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+         Height="550" Width="600" MinHeight="550" MaxWidth="600"
+        FontSize="20" Background="Transparent"
+        >
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Orange" SecondaryColor="Orange"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Window.Resources>
+
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" CornerRadius=" 10 0 0 10" >
+
+            <Border.Background>
+                <ImageBrush ImageSource="/Resources/019rIxRV8HE.jpg" Stretch="UniformToFill"/>
+            </Border.Background>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom">
+
+                <Image Source="/Resources/Logo.png"   Width="100"/>
+            </StackPanel>
+
+        </Border>
+        <Border Grid.Column="1"  BorderThickness="0" CornerRadius="0 10 10 0" Padding="50" Background="#BFBFB8">
+
+            <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                <TextBlock Text="Вход" HorizontalAlignment="Center" Foreground="Black" FontSize="30"/>
+
+
+                <TextBox Style="{StaticResource  MaterialDesignFloatingHintTextBox}" Margin="0 15" materialDesign:HintAssist.Hint="Фамилия"
+                     materialDesign:HintAssist.HintOpacity="1" />
+
+                <TextBox Style="{StaticResource  MaterialDesignFloatingHintTextBox}"  materialDesign:HintAssist.Hint="Фамилия"
+                     materialDesign:HintAssist.HintOpacity="1" />
+
+                <PasswordBox Style="{StaticResource MaterialDesignFloatingHintRevealPasswordBox}" Margin="0 15" materialDesign:HintAssist.Hint="Пароль"
+                     materialDesign:HintAssist.HintOpacity="1" />
+
+                <Button x:Name="btEnter" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Margin="0 15 0 0" 
+                        materialDesign:ButtonAssist.CornerRadius="15" Content="Вход" Foreground="White"/>
+            </StackPanel>
+        </Border>
 
     </Grid>
 </Window>
