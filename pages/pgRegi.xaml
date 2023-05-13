@@ -1,0 +1,42 @@
+﻿<Page x:Class="FreeWPF.pages.pgRegi"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FreeWPF.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="pgRegi">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Orange" SecondaryColor="Orange"/>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Page.Resources>
+
+    <Grid >
+
+        <StackPanel Margin="20">
+            <TextBlock Text="Регистрации" Style="{StaticResource MaterialDesignHeadline5TextBlock}"/>
+            <TextBox x:Name="tbName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                             materialDesign:HintAssist.Hint="Имя" Margin="0 15" materialDesign:HintAssist.HintOpacity="1"/>
+            <TextBox x:Name="tbSurName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                             materialDesign:HintAssist.Hint="Фамилия" materialDesign:HintAssist.HintOpacity="1"/>
+            <ComboBox x:Name="cbSpecialization" Style="{StaticResource MaterialDesignFloatingHintComboBox}" DisplayMemberPath="Title" SelectedItem="{Binding SpecializationId}"
+                              Margin="0 15" materialDesign:HintAssist.HintOpacity="1" materialDesign:HintAssist.Hint="Специальность "/>
+            <PasswordBox x:Name="pbPassword1" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"   
+                                 materialDesign:HintAssist.Hint="Пароль"  materialDesign:HintAssist.HintOpacity="1"/>
+            <PasswordBox x:Name="pbPassword2" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                                 materialDesign:HintAssist.Hint="Повторите пароль" Margin="0 15" materialDesign:HintAssist.HintOpacity="1"/>
+            <StackPanel Orientation="Horizontal">
+
+                <Button x:Name="btEnter" Content="Вход" Foreground="#FFFFFF" materialDesign:ButtonAssist.CornerRadius="15" Margin="0 0" HorizontalAlignment="Left" Width="250" Click="enterSing"/>
+                <Button x:Name="btAuth" Content="Авторизация" Foreground="Orange" Style="{StaticResource MaterialDesignFlatAccentButton}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

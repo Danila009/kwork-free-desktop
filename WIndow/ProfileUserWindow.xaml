@@ -43,7 +43,7 @@
 
         </Border>
 
-        <Border Grid.Row="1" Background="#BFBFB8" CornerRadius="0 0 10 10" BorderThickness="0">
+        <Border Grid.Row="1" Background="#F2F2F2" CornerRadius="0 0 10 10" BorderThickness="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

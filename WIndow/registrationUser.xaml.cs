@@ -1,7 +1,5 @@
 ﻿using FreeWPF.data.api;
 using FreeWPF.data.api.model;
-using FreeWPF.pages;
-using FreeWPF.WIndow;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,41 +12,42 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
-namespace FreeWPF
+namespace FreeWPF.WIndow
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for registrationUser.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class registrationUser : Window
     {
-        public MainWindow()
+
+        public registrationUser()
         {
             InitializeComponent();
-            frMain.Navigate(new pgAuth());
+            
         }
 
-        private void BorderMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if(e.ChangedButton == MouseButton.Left)
-            {
-                this.DragMove();
-            }
-        }
 
-        
         private void closeWindow(object sender, MouseButtonEventArgs e)
         {
             Close();
         }
 
-        
-
-        private void SungUpUser(object sender, RoutedEventArgs e)
+        private void mouseDownMove(object sender, MouseButtonEventArgs e)
         {
-            new registrationUser().Show();
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+
+        private void enterSing(object sender, RoutedEventArgs e)
+        {
+
+            
+            
         }
     }
 }
